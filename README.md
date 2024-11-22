@@ -3,11 +3,36 @@
 
 FOCUS BLOCKS is an open-source Electron app designed to help you structure your day into manageable blocks of time, highlighting your current focus area and notifying you as transitions occur. 
 
-## Features
-- Displays your daily schedule in time blocks.
-- Automatically highlights the current time block.
-- Lets you specify your focus for each time block.
-- Lightweight, dark-themed interface with Bootstrap styling.
+
+## Build and Installer Status
+
+Currently, FOCUS BLOCKS does not have a pre-built executable, binary, or installer available. The app can only be run in a development environment using the source code.
+
+A production-ready build with executables will be provided in the future. Once available, it will be hosted in the Releases section at the top of this README. Stay tuned for updates!
+
+---
+## Prerequisites
+
+To contribute to or develop FOCUS BLOCKS, ensure you have the following minimum versions installed on your system:
+
+- **Node.js**: v16.20.2
+- **npm**: v8.19.4
+
+You can verify your installed versions with the following commands:
+```bash
+node -v
+npm -v
+```
+
+### Installing Node.js and npm
+If Node.js and npm are not installed, visit the [Node.js downloads page](https://nodejs.org/) to download and install the latest LTS (Long Term Support) version. LTS versions are recommended for stability and compatibility.
+
+For additional installation options and detailed instructions, refer to the official [Node.js installation guide](https://nodejs.org/en/download/package-manager/).
+
+Ensure both tools are correctly installed and up-to-date to avoid compatibility issues during development.
+
+---
+
 
 ## Installation
 1. Clone the repository:
