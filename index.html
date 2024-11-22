@@ -8,15 +8,25 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div class="container my-4 text-center">
-        <h1>Focus Blocks</h1>
-        <h2 id="current-time"></h2>
+    <div class="container my-4">
+        <div class="header-grid">
+            <div class="header-column left">
+                <h1>Focus Blocks</h1>
+            </div>
+            <div class="header-column right">
+                <h2 id="current-time"></h2>
+            </div>
+        </div>
     </div>
+    
+
     <div class="container text-light">
         <div id="schedule" class="row gy-3"></div>
     </div>
-    <script src="renderer.js"></script>
 
+   
+        <button id="test-block-end" class="btn btn-small">Test Block End Modal</button>
+    
     <footer class="footer bg-light text-center py-3">
         <div class="container">
           <p class="mb-1">
@@ -26,13 +36,10 @@
             <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer" aria-label="Learn about CC0 1.0 license">CC0 1.0</a>.
           </p>
           <p class="mb-1">
-            Music: <em>Home is Where the Heart Is</em> by 
+            Music by 
             <a href="https://benwiley.org/" target="_blank" rel="noopener noreferrer" aria-label="Visit Ben Wiley's website">Ben Wiley</a>. Used with permission.
           </p>
-          <p class="mb-1">
-            Explore more at 
-            <a href="https://benwiley.org/" target="_blank" rel="noopener noreferrer" aria-label="Explore more of Ben Wiley's work">benwiley.org</a>.
-          </p>
+         
           <p class="mb-1">
             <strong>Focus Blocks</strong> is an 
             <a href="https://github.com/fufroom/focus-blocks" target="_blank" rel="noopener noreferrer" aria-label="Visit Focus Blocks on GitHub">open-source project</a> 
@@ -48,6 +55,7 @@
           </div>
         </div>
       </footer>
-      
+
+    <script src="./renderer.js"></script>
 </body>
 </html>

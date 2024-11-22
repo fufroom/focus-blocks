@@ -2,8 +2,11 @@
     font-family: 'radicalblock';
     src: url('./fonts/radicalblock.ttf') format('truetype');
 }
+
 h1 {
     font-family: 'radicalblock', sans-serif;
+    letter-spacing: 3px;
+
 }
 
 body {
@@ -11,43 +14,173 @@ body {
     color: #a3a3ff;
 }
 
-.card {
-    height: 150px;
+
+/* Header Grid */
+.header-grid {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+ 
+    height: 60px;
+    margin: 0px;
+}
+
+.header-column.right {
+    flex: 1; /* Equal column widths */
+    text-align: center; /* Center align the content */
+}
+
+.header-column.left {
+    width: 320px;
+    padding-top: 8px;
+    text-align: center; /* Center align the content */
+}
+
+
+
+.header-column h1 {
+    margin: 0;
+    font-size: 1.8rem; /* Adjusted size for two-column layout */
+}
+
+.header-column h2 {
+    margin: 0;
+    font-size: 1.2rem; /* Adjusted size for current time */
+    color: #a3a3ff;
+}
+
+
+
+/* Flexbox Grid for Blocks */
+#schedule {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Gutter between blocks */
+    justify-content: center; /* Center the blocks horizontally */
+    margin: 0px;
+    padding: 0px;
+
+}
+
+
+h5{
+    font-size: 0.8rem;
+    margin: 0 auto !important;
+}
+
+.block {
+    margin: 0px;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-color: #2e2e3e;
     border: 2px solid black;
-  
+    border-radius: 8px;
+    font-size: 0.6rem;
+    padding: 4px;
 }
 
-.block.active .card {
-    border: 2px solid #f47fff !important;
+.block.active {
+    border: 2px solid #f47fff;
+    box-shadow: 0 0 10px #f47fff; /* Glow effect for active block */
+}
+
+/* Focus Input */
+.block input {
+    margin-top: 5px;
+    padding: 2px;
+    font-size: 0.8rem;
+    border: 1px solid #4fd1c5;
+    border-radius: 4px;
+    background-color: #1e1e2e;
+    color: #a3a3ff;
+    width: 100%;
 }
 
 .block input:focus {
+    outline: none;
     border-color: #4fd1c5;
+    background-color: #2e2e3e;
 }
 
+/* Modal Styling */
+#block-end-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    flex-direction: column;
+}
 
+.modal-content {
+    width: 70%;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #1e1e2e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Reduce Bootstrap Container Width */
+.container {
+    max-width: 620px;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+/* Footer */
 .footer {
-    font-size: 0.9rem;
-    color: #6c757d;
-  }
-  
-  .footer a {
-    color: #007bff;
+    background-color: #1e1e2e !important; /* Dark background color */
+    font-size: 0.75rem;
+    color: #a3a3ff; /* Soft light blue text color */
+    margin-top: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    border-top: 2px solid #4fd1c5; /* Light accent border */
+}
+
+.footer > div {
+    flex: 1 1 45%; /* Two columns in footer */
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: #4fd1c5; /* Accent color for links */
     text-decoration: none;
-  }
-  
-  .footer a:hover,
-  .footer a:focus {
+}
+
+.footer a:hover,
+.footer a:focus {
     text-decoration: underline;
-  }
-  
-  .footer img {
+    color: #76e5c9; /* Slightly lighter hover color */
+}
+
+.footer p {
+    margin-bottom: 5px; /* Reduced spacing for compact layout */
+}
+
+.footer img {
     margin-top: 0.5rem;
-    height: 20px; 
+    height: 16px; /* Smaller footer badge size */
     vertical-align: middle;
-  }
-  
+}
+
+/* Footer License Badges */
+.footer .container div:last-child {
+    text-align: center;
+}
