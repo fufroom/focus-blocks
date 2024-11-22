@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'radicalblock';
+    src: url('./fonts/radicalblock.ttf') format('truetype');
+}
+h1 {
+    font-family: 'radicalblock', sans-serif;
+}
+
+body {
+    background-color: #1e1e2e;
+    color: #a3a3ff;
+}
+
+.card {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card.active {
+    border: 2px solid #f47fff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.block input:focus {
+    border-color: #4fd1c5;
+}
+
+
+
+.footer {
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+  
+  .footer a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .footer a:hover,
+  .footer a:focus {
+    text-decoration: underline;
+  }
+  
+  .footer img {
+    margin-top: 0.5rem;
+    height: 20px; /* Keeps badges a uniform size */
+    vertical-align: middle;
+  }
+  

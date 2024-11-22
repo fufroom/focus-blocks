@@ -1,0 +1,14 @@
+{
+    "name": "focus-blocks",
+    "version": "1.0.0",
+    "main": "main.js",
+    "dependencies": {
+        "play-sound": "^1.1.6"
+    },
+    "scripts": {
+        "start": "electron ."
+    },
+    "devDependencies": {
+        "electron": "^33.2.0"
+    }
+}
