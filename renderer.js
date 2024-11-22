@@ -1,13 +1,13 @@
 const schedule = [
-    { time: '09:00 AM - 09:45 AM', label: 'BLK1' },
-    { time: '10:00 AM - 10:45 AM', label: 'BLK2' },
-    { time: '11:00 AM - 11:45 AM', label: 'BLK3' },
-    { time: '11:45 AM - 01:00 PM', label: 'LUNCH break' },
-    { time: '01:00 PM - 01:45 PM', label: 'BLK4' },
-    { time: '02:00 PM - 02:45 PM', label: 'BLK5' },
-    { time: '03:00 PM - 03:45 PM', label: 'BLK6' },
-    { time: '04:00 PM - 04:45 PM', label: 'BLK7' },
-    { time: '05:00 PM - 05:45 PM', label: 'BLK8' }
+    { start: '09:00 AM', end: '09:45 AM', label: 'BLK1' },
+    { start: '10:00 AM', end: '10:45 AM', label: 'BLK2' },
+    { start: '11:00 AM', end: '11:45 AM', label: 'BLK3' },
+    { start: '11:45 AM', end: '01:00 PM', label: 'LUNCH break' },
+    { start: '01:00 PM', end: '01:45 PM', label: 'BLK4' },
+    { start: '02:00 PM', end: '02:45 PM', label: 'BLK5' },
+    { start: '03:00 PM', end: '03:45 PM', label: 'BLK6' },
+    { start: '04:00 PM', end: '04:45 PM', label: 'BLK7' },
+    { start: '05:00 PM', end: '05:45 PM', label: 'BLK8' }
 ];
 
 function updateTime() {
@@ -25,6 +25,7 @@ function parseTimeToMinutes(time) {
 
 function renderSchedule() {
     const container = document.getElementById('schedule');
+    container.innerHTML = ''; // Clear any existing content to prevent duplication
     schedule.forEach((block, index) => {
         const blockDiv = document.createElement('div');
         blockDiv.classList.add('col-md-4', 'block'); // 3 across with Bootstrap
@@ -32,7 +33,7 @@ function renderSchedule() {
         blockDiv.innerHTML = `
             <div class="card bg-dark border-teal text-white">
                 <div class="card-body">
-                    <h5 class="card-title">${block.time}</h5>
+                    <h5 class="card-title">${block.start} - ${block.end}</h5>
                     <p>${block.label}</p>
                     <input type="text" class="form-control focus-input" placeholder="Focus on...">
                 </div>
@@ -42,20 +43,27 @@ function renderSchedule() {
     });
 }
 
+
 function updateCurrentBlock() {
     const now = new Date();
     const currentTime = now.getHours() * 60 + now.getMinutes();
 
     document.querySelectorAll('.block').forEach((block, index) => {
-        const [start, end] = schedule[index].time.split('-').map(t => t.trim()).map(parseTimeToMinutes);
+        const start = parseTimeToMinutes(schedule[index].start);
+        const end = parseTimeToMinutes(schedule[index].end);
+        const cardTitle = block.querySelector('.card-title');
 
         if (currentTime >= start && currentTime < end) {
             block.classList.add('active');
+            cardTitle.innerHTML = `${schedule[index].start} - ${schedule[index].end} <span style="color: lime;">(Current Block)</span>`;
         } else {
             block.classList.remove('active');
+            cardTitle.innerHTML = `${schedule[index].start} - ${schedule[index].end}`;
         }
     });
 }
+
+
 
 function playSound(type) {
     const audio = new Audio(`./sounds/${type}.wav`);

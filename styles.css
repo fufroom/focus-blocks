@@ -17,17 +17,17 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    border: 2px solid black;
+  
 }
 
-.card.active {
-    border: 2px solid #f47fff;
-    background-color: rgba(255, 255, 255, 0.1);
+.block.active .card {
+    border: 2px solid #f47fff !important;
 }
 
 .block input:focus {
     border-color: #4fd1c5;
 }
-
 
 
 .footer {
@@ -47,7 +47,7 @@ body {
   
   .footer img {
     margin-top: 0.5rem;
-    height: 20px; /* Keeps badges a uniform size */
+    height: 20px; 
     vertical-align: middle;
   }
   

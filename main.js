@@ -13,8 +13,8 @@ app.on('ready', () => {
 
     // Create the main window
     mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 825,
+        height: 825,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
             contextIsolation: true,
@@ -22,6 +22,11 @@ app.on('ready', () => {
         }
     });
 
+
+    mainWindow.webContents.executeJavaScript(`
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
+    `);
     // Load the app
     mainWindow.loadFile('index.html');
 });
